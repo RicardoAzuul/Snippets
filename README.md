@@ -17,7 +17,8 @@ set minute=%datetime:~10,2%
 echo %year%-%month%-%day% %hour%:%minute%
 ```
 
-# Get the sessionname for the session under [USERNAME] and turn it into a console session
+Get the sessionname for the session under [USERNAME] and turn it into a console session
+```
 $quser = quser [USERNAME]
 $match = $quser[1] -match 'rdp-tcp#*.'
 if ($match) {
@@ -25,3 +26,4 @@ if ($match) {
 }
 
 tscon $rdpSessionName /dest:console
+```
